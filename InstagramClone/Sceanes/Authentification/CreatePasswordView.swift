@@ -8,8 +8,50 @@
 import SwiftUI
 
 struct CreatePasswordView: View {
+    @State var password = ""
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 12) {
+            Text("Create a password")
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.top)
+            
+            Text("Your password must be  at least 6 charaters in lehgth")
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 24)
+            
+            SecureField("Username", text: $password)
+                .autocorrectionDisabled()
+                .modifier(InstagramTextFieldModifier())
+                .padding(.top)
+            
+            NavigationLink {
+                CompleteSignUpView()
+                    .navigationBarBackButtonHidden()
+            } label: {
+                Text("Next")
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .frame(width: 360, height: 44)
+                    .background(.blue)
+                    .cornerRadius(10)
+            }
+            Spacer()
+        }
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .onTapGesture {
+                        dismiss()
+                    }
+                
+            }
+        })
     }
 }
 

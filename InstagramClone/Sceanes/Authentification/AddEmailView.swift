@@ -8,8 +8,56 @@
 import SwiftUI
 
 struct AddEmailView: View {
+    @State var email = ""
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 12) {
+            Text("Add your email")
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.top)
+            
+            Text("You'll use this emailto sign in to your account")
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 24)
+            
+            TextField("Email", text: $email)
+                .autocorrectionDisabled()
+                .modifier(InstagramTextFieldModifier())
+                .padding(.top)
+            
+            NavigationLink {
+                CreateUsernameView()
+                    .navigationBarBackButtonHidden()
+            } label: {
+                Text("Next")
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .frame(width: 360, height: 44)
+                    .background(.blue)
+                    .cornerRadius(10)
+            }
+
+            Button {
+                print("go to username")
+            } label: {
+                
+            }
+            Spacer()
+        }
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .onTapGesture {
+                        dismiss()
+                    }
+                
+            }
+        })
     }
 }
 
