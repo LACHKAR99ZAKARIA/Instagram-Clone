@@ -1,5 +1,5 @@
 //
-//  CreateUsernameView.swift
+//  CompleteSignUpView.swift
 //  InstagramClone
 //
 //  Created by Zakarai Lachkar on 25/9/2023.
@@ -7,32 +7,25 @@
 
 import SwiftUI
 
-struct CreateUsernameView: View {
-    @State var username = ""
+struct CompleteSignUpView: View {
+    @EnvironmentObject var viewModel: RegistationViewModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack(spacing: 12) {
-            Text("Create username")
+            Text("Welcome to Instagram, \(viewModel.username)")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("Pick a username for your new account. You can alwase change it later.")
+            Text("Click below to complete registration and start using Instagram.")
                 .font(.footnote)
-                .foregroundColor(.gray)
+                .foregroundColor(.black)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
-            
-            TextField("Username", text: $username)
-                .autocorrectionDisabled()
-                .modifier(InstagramTextFieldModifier())
-                .padding(.top)
-            
-            NavigationLink {
-                CreatePasswordView()
-                    .navigationBarBackButtonHidden()
+            Button {
+                Task { try await viewModel.createUser() }
             } label: {
-                Text("Next")
+                Text("Complete Sign Up")
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -41,13 +34,6 @@ struct CreateUsernameView: View {
                     .cornerRadius(10)
             }
 
-            
-            Button {
-                print("go to password")
-            } label: {
-                
-            }
-            Spacer()
         }
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -63,5 +49,5 @@ struct CreateUsernameView: View {
 }
 
 #Preview {
-    CreateUsernameView()
+    CompleteSignUpView()
 }

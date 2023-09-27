@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct FeedCell: View {
+    let post: Post
     var body: some View {
         VStack {
             HStack {
-                Image(.zakarialachkarProfile)
+                Image(post.user?.profileImgUrl ?? "defaultprofile")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
-                Text("zakaria99la")
+                Text(post.user!.username)
                     .font(.footnote)
                     .fontWeight(.semibold)
                 Spacer()
             }
             .padding(.leading)
-            Image(.uiKit)
+            Image(post.imgUrl)
                 .resizable()
                 .scaledToFit()
                 .clipShape(Rectangle())
@@ -52,7 +53,7 @@ struct FeedCell: View {
             .padding(.top, 4)
             .foregroundColor(.black)
             
-            Text("23 Likes")
+            Text("\(post.likes) Likes")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -60,9 +61,9 @@ struct FeedCell: View {
                 .padding(.top, 1)
             
             HStack {
-                Text("zakaria99la ")
+                Text("\(post.user!.username) ")
                     .fontWeight(.semibold)
-                + Text("UIKit or SwiftUI?")
+                + Text("\(post.caption)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 10)
@@ -80,5 +81,5 @@ struct FeedCell: View {
 }
 
 #Preview {
-    FeedCell()
+    FeedCell(post: Post.MOCK_POSTS[0])
 }
