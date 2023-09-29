@@ -12,21 +12,24 @@ struct FeedCell: View {
     var body: some View {
         VStack {
             HStack {
-                Image(post.user?.profileImgUrl ?? "defaultprofile")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-                Text(post.user!.username)
-                    .font(.footnote)
-                    .fontWeight(.semibold)
+                if let u = post.user {
+                    NavigationLink {
+                        ProfileView(user: u)
+                    } label: {
+                        CircilerProfileImageView(user: u, size: .xSmale)
+                        Text(u.username)
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                    }
+                }
                 Spacer()
             }
             .padding(.leading)
-            Image(post.imgUrl)
-                .resizable()
-                .scaledToFit()
-                .clipShape(Rectangle())
+//            Image(post.imgUrl)
+//                .resizable()
+//                .scaledToFit()
+//                .clipShape(Rectangle())
+            PostImageRectagleView(post: post)
             
             HStack(spacing: 16) {
                 Button {
@@ -61,9 +64,11 @@ struct FeedCell: View {
                 .padding(.top, 1)
             
             HStack {
-                Text("\(post.user!.username) ")
-                    .fontWeight(.semibold)
-                + Text("\(post.caption)")
+                if let u = post.user {
+                    Text("\(post.user!.username) ")
+                            .fontWeight(.semibold)
+                    Text("\(post.caption)")
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 10)

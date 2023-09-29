@@ -29,7 +29,10 @@ struct UploadPostView: View {
                     .fontWeight(.semibold)
                 Spacer()
                 Button {
-                    print("upload Post")
+                    Task {
+                        try await viewModel.uploadPost(caption: caption)
+                        clearPostDataAndReturnToFeed()
+                    }
                 } label: {
                     Text("Upload")
                         .fontWeight(.semibold)
@@ -53,6 +56,12 @@ struct UploadPostView: View {
             imgPickerPresenter.toggle()
         }
         .photosPicker(isPresented: $imgPickerPresenter, selection: $viewModel.selectedImg)
+    }
+    func clearPostDataAndReturnToFeed() {
+        caption = ""
+        viewModel.selectedImg = nil
+        viewModel.profileImg = nil
+        tabIndex = 0
     }
 }
 
