@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     let user: User
     @State private var selectedIndex = 0
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         TabView(selection: $selectedIndex) {
             FeedView()
@@ -52,7 +53,7 @@ struct MainTabView: View {
                     Image(systemName: "person")
                 }.tag(4)
         }
-        .accentColor(.black)
+        .accentColor(colorScheme == .light ? Color.black : Color.white)
     }
 }
 

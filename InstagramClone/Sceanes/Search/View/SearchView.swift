@@ -28,7 +28,6 @@ struct SearchView: View {
                                 .font(.footnote)
                                 Spacer()
                             }
-                            .foregroundStyle(.black)
                             .padding(.horizontal)
                         }
                     }

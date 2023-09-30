@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedCell: View {
+    @Environment(\.colorScheme) var colorScheme
     let post: Post
     var body: some View {
         VStack {
@@ -20,6 +21,7 @@ struct FeedCell: View {
                         Text(u.username)
                             .font(.footnote)
                             .fontWeight(.semibold)
+                            .foregroundColor(colorScheme == .light ? Color.black : Color.white)
                     }
                 }
                 Spacer()
@@ -54,7 +56,8 @@ struct FeedCell: View {
             }
             .padding(.leading, 8)
             .padding(.top, 4)
-            .foregroundColor(.black)
+//            .foregroundColor(.black)
+            .foregroundColor(colorScheme == .light ? Color.black : Color.white)
             
             Text("\(post.likes) Likes")
                 .font(.footnote)

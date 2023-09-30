@@ -49,6 +49,7 @@ struct AddEmailView: View {
             }
             Spacer()
         }
+        .navigationBarBackButtonHidden()
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarLeading) {
                 Image(systemName: "chevron.left")

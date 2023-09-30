@@ -11,6 +11,11 @@
 		01558A1F2AC616AE001EB542 /* PostImageRectagleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A1E2AC616AE001EB542 /* PostImageRectagleView.swift */; };
 		01558A212AC61C3E001EB542 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A202AC61C3E001EB542 /* PostService.swift */; };
 		01558A262AC715C6001EB542 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A252AC715C6001EB542 /* PostGridViewModel.swift */; };
+		01558A292AC76978001EB542 /* SwipeBackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A282AC76978001EB542 /* SwipeBackModifier.swift */; };
+		01558A2C2AC78D6B001EB542 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = 01558A2B2AC78D6B001EB542 /* NavigationStack */; };
+		01558A2E2AC7928F001EB542 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A2D2AC7928F001EB542 /* UINavigationController.swift */; };
+		01558A302AC792BA001EB542 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A2F2AC792BA001EB542 /* View.swift */; };
+		01558A332AC79786001EB542 /* SwipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A322AC79786001EB542 /* SwipeManager.swift */; };
 		0158EB522AC1E439004EB479 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB512AC1E439004EB479 /* MainTabView.swift */; };
 		0158EB542AC1E6E1004EB479 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB532AC1E6E1004EB479 /* ProfileView.swift */; };
 		0158EB562AC1EBF9004EB479 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB552AC1EBF9004EB479 /* UserStatView.swift */; };
@@ -77,6 +82,10 @@
 		01558A1E2AC616AE001EB542 /* PostImageRectagleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageRectagleView.swift; sourceTree = "<group>"; };
 		01558A202AC61C3E001EB542 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		01558A252AC715C6001EB542 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
+		01558A282AC76978001EB542 /* SwipeBackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackModifier.swift; sourceTree = "<group>"; };
+		01558A2D2AC7928F001EB542 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		01558A2F2AC792BA001EB542 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		01558A322AC79786001EB542 /* SwipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeManager.swift; sourceTree = "<group>"; };
 		0158EB512AC1E439004EB479 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		0158EB532AC1E6E1004EB479 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0158EB552AC1EBF9004EB479 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
@@ -126,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0158EB822AC324E1004EB479 /* FirebaseAuth in Frameworks */,
+				01558A2C2AC78D6B001EB542 /* NavigationStack in Frameworks */,
 				0158EB882AC324E1004EB479 /* FirebaseStorage in Frameworks */,
 				0158EB842AC324E1004EB479 /* FirebaseFirestore in Frameworks */,
 				0158EB862AC324E1004EB479 /* FirebaseFirestoreSwift in Frameworks */,
@@ -163,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				01558A1C2AC60D6C001EB542 /* FeedViewModel.swift */,
+				01558A322AC79786001EB542 /* SwipeManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,6 +273,8 @@
 		0158EB712AC2CEB1004EB479 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
+				01558A2D2AC7928F001EB542 /* UINavigationController.swift */,
+				01558A2F2AC792BA001EB542 /* View.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -340,6 +353,7 @@
 		015E95C92ABF1C6D00679C25 = {
 			isa = PBXGroup;
 			children = (
+				01558A282AC76978001EB542 /* SwipeBackModifier.swift */,
 				015E95D42ABF1C6E00679C25 /* InstagramClone */,
 				015E95E52ABF1C7000679C25 /* InstagramCloneTests */,
 				015E95EF2ABF1C7000679C25 /* InstagramCloneUITests */,
@@ -471,6 +485,7 @@
 				0158EB852AC324E1004EB479 /* FirebaseFirestoreSwift */,
 				0158EB872AC324E1004EB479 /* FirebaseStorage */,
 				01AA554E2AC5B9B500A37C34 /* Kingfisher */,
+				01558A2B2AC78D6B001EB542 /* NavigationStack */,
 			);
 			productName = InstagramClone;
 			productReference = 015E95D22ABF1C6E00679C25 /* InstagramClone.app */;
@@ -547,6 +562,7 @@
 			packageReferences = (
 				0158EB802AC324E1004EB479 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				01AA554D2AC5B9B500A37C34 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				01558A2A2AC78D6B001EB542 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 			);
 			productRefGroup = 015E95D32ABF1C6E00679C25 /* Products */;
 			projectDirPath = "";
@@ -593,9 +609,11 @@
 			files = (
 				01558A262AC715C6001EB542 /* PostGridViewModel.swift in Sources */,
 				0158EB5B2AC1F06C004EB479 /* FeedView.swift in Sources */,
+				01558A2E2AC7928F001EB542 /* UINavigationController.swift in Sources */,
 				0158EB7B2AC2F732004EB479 /* UploadPostView.swift in Sources */,
 				0158EB542AC1E6E1004EB479 /* ProfileView.swift in Sources */,
 				015E95D82ABF1C6E00679C25 /* ContentView.swift in Sources */,
+				01558A302AC792BA001EB542 /* View.swift in Sources */,
 				0158EB5F2AC21125004EB479 /* LoginView.swift in Sources */,
 				01AA55492AC5AACC00A37C34 /* EditProfileViewModel.swift in Sources */,
 				01AA55512AC5BA9E00A37C34 /* CircilerProfileImageView.swift in Sources */,
@@ -605,6 +623,7 @@
 				015E95D62ABF1C6E00679C25 /* InstagramCloneApp.swift in Sources */,
 				0158EB732AC2D884004EB479 /* CurrentUserProfileView.swift in Sources */,
 				0158EB612AC21619004EB479 /* AddEmailView.swift in Sources */,
+				01558A292AC76978001EB542 /* SwipeBackModifier.swift in Sources */,
 				0158EB772AC2EBA2004EB479 /* PostGridView.swift in Sources */,
 				01558A1D2AC60D6C001EB542 /* FeedViewModel.swift in Sources */,
 				0158EB672AC21AB3004EB479 /* CreateUsernameView.swift in Sources */,
@@ -625,6 +644,7 @@
 				0158EB9C2AC58712004EB479 /* SearchViewModel.swift in Sources */,
 				0158EB592AC1F060004EB479 /* FeedCell.swift in Sources */,
 				01558A1F2AC616AE001EB542 /* PostImageRectagleView.swift in Sources */,
+				01558A332AC79786001EB542 /* SwipeManager.swift in Sources */,
 				0158EB692AC21C61004EB479 /* CreatePasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -961,6 +981,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		01558A2A2AC78D6B001EB542 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
 		0158EB802AC324E1004EB479 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -980,6 +1008,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		01558A2B2AC78D6B001EB542 /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01558A2A2AC78D6B001EB542 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
 		0158EB812AC324E1004EB479 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0158EB802AC324E1004EB479 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

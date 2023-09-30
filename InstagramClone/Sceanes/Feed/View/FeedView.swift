@@ -40,7 +40,6 @@ struct FeedView: View {
             Task { try await viewModel.featchPost() }
         }
     }
-    
 }
 
 #Preview {
