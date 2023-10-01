@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     let user: User
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -24,7 +25,7 @@ struct CurrentUserProfileView: View {
                             AuthService.shared.signOut()
                         } label: {
                             Image(systemName: "line.3.horizontal")
-                                .foregroundColor(.black)
+                                .foregroundColor(colorScheme == .light ? Color.black : Color.white)
                         }
 
                     }

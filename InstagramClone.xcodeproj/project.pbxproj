@@ -16,6 +16,9 @@
 		01558A2E2AC7928F001EB542 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A2D2AC7928F001EB542 /* UINavigationController.swift */; };
 		01558A302AC792BA001EB542 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A2F2AC792BA001EB542 /* View.swift */; };
 		01558A332AC79786001EB542 /* SwipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A322AC79786001EB542 /* SwipeManager.swift */; };
+		01558A352AC8315B001EB542 /* SwipeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A342AC8315B001EB542 /* SwipeModifier.swift */; };
+		01558A392AC9B93F001EB542 /* DiscutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A382AC9B93F001EB542 /* DiscutionsView.swift */; };
+		01558A3C2ACA2487001EB542 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 01558A3B2ACA2487001EB542 /* SwiftUIPager */; };
 		0158EB522AC1E439004EB479 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB512AC1E439004EB479 /* MainTabView.swift */; };
 		0158EB542AC1E6E1004EB479 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB532AC1E6E1004EB479 /* ProfileView.swift */; };
 		0158EB562AC1EBF9004EB479 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB552AC1EBF9004EB479 /* UserStatView.swift */; };
@@ -86,6 +89,8 @@
 		01558A2D2AC7928F001EB542 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		01558A2F2AC792BA001EB542 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		01558A322AC79786001EB542 /* SwipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeManager.swift; sourceTree = "<group>"; };
+		01558A342AC8315B001EB542 /* SwipeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeModifier.swift; sourceTree = "<group>"; };
+		01558A382AC9B93F001EB542 /* DiscutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscutionsView.swift; sourceTree = "<group>"; };
 		0158EB512AC1E439004EB479 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		0158EB532AC1E6E1004EB479 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0158EB552AC1EBF9004EB479 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 				0158EB822AC324E1004EB479 /* FirebaseAuth in Frameworks */,
 				01558A2C2AC78D6B001EB542 /* NavigationStack in Frameworks */,
 				0158EB882AC324E1004EB479 /* FirebaseStorage in Frameworks */,
+				01558A3C2ACA2487001EB542 /* SwiftUIPager in Frameworks */,
 				0158EB842AC324E1004EB479 /* FirebaseFirestore in Frameworks */,
 				0158EB862AC324E1004EB479 /* FirebaseFirestoreSwift in Frameworks */,
 				01AA554F2AC5B9B500A37C34 /* Kingfisher in Frameworks */,
@@ -186,6 +192,7 @@
 				0158EB762AC2EBA2004EB479 /* PostGridView.swift */,
 				01AA55502AC5BA9E00A37C34 /* CircilerProfileImageView.swift */,
 				01558A1E2AC616AE001EB542 /* PostImageRectagleView.swift */,
+				01558A342AC8315B001EB542 /* SwipeModifier.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +203,22 @@
 				01558A252AC715C6001EB542 /* PostGridViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01558A362AC9B914001EB542 /* Discutions */ = {
+			isa = PBXGroup;
+			children = (
+				01558A372AC9B91F001EB542 /* View */,
+			);
+			path = Discutions;
+			sourceTree = "<group>";
+		};
+		01558A372AC9B91F001EB542 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01558A382AC9B93F001EB542 /* DiscutionsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0158EB492AC1E3C5004EB479 /* Authentification */ = {
@@ -417,6 +440,7 @@
 		015E95FF2ABF1CB100679C25 /* Sceanes */ = {
 			isa = PBXGroup;
 			children = (
+				01558A362AC9B914001EB542 /* Discutions */,
 				0158EB492AC1E3C5004EB479 /* Authentification */,
 				0158EB4A2AC1E3D1004EB479 /* Feed */,
 				0158EB4B2AC1E3D6004EB479 /* Profile */,
@@ -486,6 +510,7 @@
 				0158EB872AC324E1004EB479 /* FirebaseStorage */,
 				01AA554E2AC5B9B500A37C34 /* Kingfisher */,
 				01558A2B2AC78D6B001EB542 /* NavigationStack */,
+				01558A3B2ACA2487001EB542 /* SwiftUIPager */,
 			);
 			productName = InstagramClone;
 			productReference = 015E95D22ABF1C6E00679C25 /* InstagramClone.app */;
@@ -563,6 +588,7 @@
 				0158EB802AC324E1004EB479 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				01AA554D2AC5B9B500A37C34 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				01558A2A2AC78D6B001EB542 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+				01558A3A2ACA2487001EB542 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = 015E95D32ABF1C6E00679C25 /* Products */;
 			projectDirPath = "";
@@ -620,8 +646,10 @@
 				0158EB8C2AC32674004EB479 /* AuthService.swift in Sources */,
 				0158EB982AC58585004EB479 /* UserService.swift in Sources */,
 				0158EB752AC2DBAD004EB479 /* Post.swift in Sources */,
+				01558A352AC8315B001EB542 /* SwipeModifier.swift in Sources */,
 				015E95D62ABF1C6E00679C25 /* InstagramCloneApp.swift in Sources */,
 				0158EB732AC2D884004EB479 /* CurrentUserProfileView.swift in Sources */,
+				01558A392AC9B93F001EB542 /* DiscutionsView.swift in Sources */,
 				0158EB612AC21619004EB479 /* AddEmailView.swift in Sources */,
 				01558A292AC76978001EB542 /* SwipeBackModifier.swift in Sources */,
 				0158EB772AC2EBA2004EB479 /* PostGridView.swift in Sources */,
@@ -989,6 +1017,14 @@
 				minimumVersion = 1.0.6;
 			};
 		};
+		01558A3A2ACA2487001EB542 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
 		0158EB802AC324E1004EB479 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1012,6 +1048,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 01558A2A2AC78D6B001EB542 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
 			productName = NavigationStack;
+		};
+		01558A3B2ACA2487001EB542 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01558A3A2ACA2487001EB542 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
 		};
 		0158EB812AC324E1004EB479 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

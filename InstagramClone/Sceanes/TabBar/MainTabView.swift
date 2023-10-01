@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State private var isTabViewActive = true
     let user: User
     @State private var selectedIndex = 0
     @Environment(\.colorScheme) var colorScheme
