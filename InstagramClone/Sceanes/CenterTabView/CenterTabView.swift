@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct MainTabView: View {
-    @State private var isTabViewActive = true
+struct CenterTabView: View {
     let user: User
-    @State private var selectedIndex = 0
+    @Binding var selectedIndex: Int
+    @Binding var offset: CGFloat
+    @State private var isTabViewActive = true
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         TabView(selection: $selectedIndex) {
-            FeedView()
+            FeedView(offset: $offset)
                 .onAppear{
                     selectedIndex = 0
                 }
@@ -59,5 +60,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView(user: User.MOCK_USERS[0])
+    CenterTabView(user: User.MOCK_USERS[0], selectedIndex: .constant(0), offset: .constant(0))
 }

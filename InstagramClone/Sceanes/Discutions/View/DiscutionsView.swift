@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DiscutionsView: View {
     @State private var searchText = ""
-    @Binding var page: Int
+    @Binding var offset: CGFloat
     var body: some View {
             NavigationStack {
                 ScrollView {
@@ -30,7 +30,7 @@ struct DiscutionsView: View {
                             Image(systemName: "chevron.left")
                                 .onTapGesture {
                                     withAnimation {
-                                        page = 0
+                                        offset = UIScreen.main.bounds.width * 0
                                     }
                                 }
                             HStack{
@@ -41,12 +41,14 @@ struct DiscutionsView: View {
                             }
                             .fontWeight(.semibold)
                         }
+                        .padding(.all)
                     }
                 }
             }
+//            .toolbar(.hidden, for: .tabBar)
     }
 }
 
 #Preview {
-    DiscutionsView(page: .constant(1))
+    DiscutionsView(offset: .constant(1))
 }

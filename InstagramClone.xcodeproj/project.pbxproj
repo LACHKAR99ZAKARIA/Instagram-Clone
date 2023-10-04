@@ -19,7 +19,9 @@
 		01558A352AC8315B001EB542 /* SwipeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A342AC8315B001EB542 /* SwipeModifier.swift */; };
 		01558A392AC9B93F001EB542 /* DiscutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A382AC9B93F001EB542 /* DiscutionsView.swift */; };
 		01558A3C2ACA2487001EB542 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 01558A3B2ACA2487001EB542 /* SwiftUIPager */; };
-		0158EB522AC1E439004EB479 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB512AC1E439004EB479 /* MainTabView.swift */; };
+		01558B082ACD8A27001EB542 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558B072ACD8A27001EB542 /* MainView.swift */; };
+		01558B0A2ACD8A53001EB542 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558B092ACD8A53001EB542 /* ScrollableTabBar.swift */; };
+		0158EB522AC1E439004EB479 /* CenterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB512AC1E439004EB479 /* CenterTabView.swift */; };
 		0158EB542AC1E6E1004EB479 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB532AC1E6E1004EB479 /* ProfileView.swift */; };
 		0158EB562AC1EBF9004EB479 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB552AC1EBF9004EB479 /* UserStatView.swift */; };
 		0158EB592AC1F060004EB479 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB582AC1F060004EB479 /* FeedCell.swift */; };
@@ -91,7 +93,9 @@
 		01558A322AC79786001EB542 /* SwipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeManager.swift; sourceTree = "<group>"; };
 		01558A342AC8315B001EB542 /* SwipeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeModifier.swift; sourceTree = "<group>"; };
 		01558A382AC9B93F001EB542 /* DiscutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscutionsView.swift; sourceTree = "<group>"; };
-		0158EB512AC1E439004EB479 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		01558B072ACD8A27001EB542 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		01558B092ACD8A53001EB542 /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
+		0158EB512AC1E439004EB479 /* CenterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTabView.swift; sourceTree = "<group>"; };
 		0158EB532AC1E6E1004EB479 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0158EB552AC1EBF9004EB479 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		0158EB582AC1F060004EB479 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				01AA55502AC5BA9E00A37C34 /* CircilerProfileImageView.swift */,
 				01558A1E2AC616AE001EB542 /* PostImageRectagleView.swift */,
 				01558A342AC8315B001EB542 /* SwipeModifier.swift */,
+				01558B092ACD8A53001EB542 /* ScrollableTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +224,14 @@
 				01558A382AC9B93F001EB542 /* DiscutionsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		01558B062ACD8A16001EB542 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				01558B072ACD8A27001EB542 /* MainView.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		0158EB492AC1E3C5004EB479 /* Authentification */ = {
@@ -267,12 +280,12 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		0158EB4E2AC1E3FA004EB479 /* TabBar */ = {
+		0158EB4E2AC1E3FA004EB479 /* CenterTabView */ = {
 			isa = PBXGroup;
 			children = (
-				0158EB512AC1E439004EB479 /* MainTabView.swift */,
+				0158EB512AC1E439004EB479 /* CenterTabView.swift */,
 			);
-			path = TabBar;
+			path = CenterTabView;
 			sourceTree = "<group>";
 		};
 		0158EB4F2AC1E409004EB479 /* UploadPost */ = {
@@ -440,13 +453,14 @@
 		015E95FF2ABF1CB100679C25 /* Sceanes */ = {
 			isa = PBXGroup;
 			children = (
+				01558B062ACD8A16001EB542 /* MainView */,
 				01558A362AC9B914001EB542 /* Discutions */,
 				0158EB492AC1E3C5004EB479 /* Authentification */,
 				0158EB4A2AC1E3D1004EB479 /* Feed */,
 				0158EB4B2AC1E3D6004EB479 /* Profile */,
 				0158EB4C2AC1E3E5004EB479 /* Root */,
 				0158EB4D2AC1E3EA004EB479 /* Search */,
-				0158EB4E2AC1E3FA004EB479 /* TabBar */,
+				0158EB4E2AC1E3FA004EB479 /* CenterTabView */,
 				0158EB4F2AC1E409004EB479 /* UploadPost */,
 			);
 			path = Sceanes;
@@ -634,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01558A262AC715C6001EB542 /* PostGridViewModel.swift in Sources */,
+				01558B082ACD8A27001EB542 /* MainView.swift in Sources */,
 				0158EB5B2AC1F06C004EB479 /* FeedView.swift in Sources */,
 				01558A2E2AC7928F001EB542 /* UINavigationController.swift in Sources */,
 				0158EB7B2AC2F732004EB479 /* UploadPostView.swift in Sources */,
@@ -661,6 +676,7 @@
 				01AA554C2AC5B57300A37C34 /* ImageUploader.swift in Sources */,
 				0158EB932AC32C06004EB479 /* RegistrationViewModel.swift in Sources */,
 				0158EB7D2AC2FA3C004EB479 /* UploadPostViewModel.swift in Sources */,
+				01558B0A2ACD8A53001EB542 /* ScrollableTabBar.swift in Sources */,
 				0158EB792AC2ECCE004EB479 /* ProfileHeaderView.swift in Sources */,
 				0158EB6B2AC21D4D004EB479 /* CompleteSignUpView.swift in Sources */,
 				0158EB702AC2CE2F004EB479 /* User.swift in Sources */,
@@ -668,7 +684,7 @@
 				0158EB652AC219E4004EB479 /* InstagramTextFieldModifier.swift in Sources */,
 				0158EB5D2AC20E98004EB479 /* SearchView.swift in Sources */,
 				0158EB562AC1EBF9004EB479 /* UserStatView.swift in Sources */,
-				0158EB522AC1E439004EB479 /* MainTabView.swift in Sources */,
+				0158EB522AC1E439004EB479 /* CenterTabView.swift in Sources */,
 				0158EB9C2AC58712004EB479 /* SearchViewModel.swift in Sources */,
 				0158EB592AC1F060004EB479 /* FeedCell.swift in Sources */,
 				01558A1F2AC616AE001EB542 /* PostImageRectagleView.swift in Sources */,

@@ -6,21 +6,11 @@
 //
 
 import SwiftUI
-import SwiftUIPager
+//import SwiftUIPager
 
 struct FeedView: View {
+    @Binding var offset: CGFloat
     @StateObject var feedViewModel = FeedViewModel()
-    @State var page: Int = 0
-    func navigationTitle() -> String {
-           if page == 0 {
-               return "Feed"
-           } else if page == 1 {
-               return ""
-           }
-           else {
-               return ""
-           }
-       }
 //    // Helper function to conditionally apply .searchable modifier
 //    @ViewBuilder
 //    private func navBar() -> some View {
@@ -67,25 +57,29 @@ struct FeedView: View {
 //                }
 //        }
 //    }
-    func pageView(_ page: Int) -> some View {
-        switch page {
-        case 0: return AnyView(
-            feed
-        )
-        case 1: return AnyView(DiscutionsView(page: $page))
-        default: return AnyView(Text("Discussions"))
-        }
-    }
+//    func pageView(_ page: Int) -> some View {
+//        switch page {
+//        case 0: return AnyView(
+//            feed
+//                .toolbar(.visible, for: .tabBar)
+//        )
+//        case 1: return AnyView(
+//            DiscutionsView(page: $page)
+////                .toolbar(.hidden, for: .tabBar)
+//        )
+//        default: return AnyView(Text("Discussions"))
+//        }
+//    }
+//    var body: some View {
+//        var pageBinding = Page.withIndex(page)
+//            Pager(page: Page.withIndex(page), data: [0, 1], id: \.self) {
+//                self.pageView($0)
+//            }
+//            .swipeInteractionArea(.allAvailable)
+////            .background(navBar())
+////        .tabViewStyle(.page(indexDisplayMode: .always))
+//    }
     var body: some View {
-            let pageBinding = Page.withIndex(page)
-            Pager(page: pageBinding, data: [0, 1], id: \.self) {
-                self.pageView($0)
-            }
-//            .background(navBar())
-//        .tabViewStyle(.page(indexDisplayMode: .always))
-    }
-    var feed: some View {
-        VStack {
             NavigationStack {
                 ScrollView {
                     LazyVStack(spacing: 32,content: {
@@ -105,25 +99,27 @@ struct FeedView: View {
                         Image(.logo)
                             .resizable()
                             .frame(width: 100, height: 32)
+                            .padding(.all)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Image(systemName: "paperplane")
+                        .padding(.all)
                         .imageScale(.large)
                         .onTapGesture {
                             withAnimation {
-                                page = 1
+                                offset = UIScreen.main.bounds.width * 1
                             }
                         }
                     }
                 }
             }
             .onAppear{
-                Task { try await feedViewModel.featchPost() }
-        }
+                Task { try await feedViewModel.featchPost()
+            }
         }
     }
 }
 
 #Preview {
-    FeedView()
+    FeedView(offset: .constant(0))
 }
