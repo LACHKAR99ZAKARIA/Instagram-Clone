@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @ObservedObject var mainSwiperModel: MainViewModel
     @State private var searchText = ""
     @StateObject var viewModel = SearchViewModel()
     var body: some View {
@@ -35,8 +36,12 @@ struct SearchView: View {
                 .padding(.top, 8)
                 .searchable(text: $searchText, prompt: "Search...")
             }
+            .onAppear{
+                mainSwiperModel.leftView = nil
+                mainSwiperModel.rightView = nil
+            }
             .navigationDestination(for: User.self) { user in
-                ProfileView(user: user)
+                ProfileView(mainSwiperModel: mainSwiperModel, user: user)
             }
         }
         .navigationTitle("Explore")
@@ -45,5 +50,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView()
+    SearchView(mainSwiperModel: MainViewModel())
 }

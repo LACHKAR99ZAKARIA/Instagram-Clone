@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct CenterTabView: View {
+    @ObservedObject var mainSwiperModel: MainViewModel
     let user: User
-    @Binding var selectedIndex: Int
-    @Binding var offset: CGFloat
+    @State var selectedIndex: Int = 0
+    @State var offset: CGFloat = 1
     @State private var isTabViewActive = true
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         TabView(selection: $selectedIndex) {
-            FeedView(offset: $offset)
+            FeedView(offset: $offset, mainSwiperModel: mainSwiperModel)
                 .onAppear{
                     selectedIndex = 0
                 }
@@ -23,7 +24,7 @@ struct CenterTabView: View {
                     Image(systemName: "house")
                 }.tag(0)
             
-            SearchView()
+            SearchView(mainSwiperModel: mainSwiperModel)
                 .onAppear{
                     selectedIndex = 1
                 }
@@ -31,7 +32,7 @@ struct CenterTabView: View {
                     Image(systemName: "magnifyingglass")
                 }.tag(1)
             
-            UploadPostView(tabIndex: $selectedIndex)
+            UploadPostView(mainSwiperModel: mainSwiperModel, tabIndex: $selectedIndex)
                 .onAppear{
                     selectedIndex = 2
                 }
@@ -41,13 +42,15 @@ struct CenterTabView: View {
             
             Text("Notifications")
                 .onAppear{
+                    mainSwiperModel.leftView = nil
+                    mainSwiperModel.rightView = nil
                     selectedIndex = 3
                 }
                 .tabItem {
                     Image(systemName: "heart")
                 }.tag(3)
             
-            CurrentUserProfileView(user: user)
+            CurrentUserProfileView(mainSwiperModel: mainSwiperModel, user: user)
                 .onAppear{
                     selectedIndex = 4
                 }
@@ -56,9 +59,10 @@ struct CenterTabView: View {
                 }.tag(4)
         }
         .accentColor(colorScheme == .light ? Color.black : Color.white)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
 #Preview {
-    CenterTabView(user: User.MOCK_USERS[0], selectedIndex: .constant(0), offset: .constant(0))
+    CenterTabView(mainSwiperModel: MainViewModel(), user: User.MOCK_USERS[0])
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DiscutionsView: View {
     @State private var searchText = ""
-    @Binding var offset: CGFloat
+    @ObservedObject var mainSwiperModel: MainViewModel
     var body: some View {
             NavigationStack {
                 ScrollView {
@@ -30,7 +30,7 @@ struct DiscutionsView: View {
                             Image(systemName: "chevron.left")
                                 .onTapGesture {
                                     withAnimation {
-                                        offset = UIScreen.main.bounds.width * 0
+                                        mainSwiperModel.activeView = .center
                                     }
                                 }
                             HStack{
@@ -50,5 +50,5 @@ struct DiscutionsView: View {
 }
 
 #Preview {
-    DiscutionsView(offset: .constant(1))
+    DiscutionsView(mainSwiperModel: MainViewModel())
 }

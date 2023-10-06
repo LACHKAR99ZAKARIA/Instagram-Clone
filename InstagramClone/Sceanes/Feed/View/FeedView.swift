@@ -11,6 +11,7 @@ import SwiftUI
 struct FeedView: View {
     @Binding var offset: CGFloat
     @StateObject var feedViewModel = FeedViewModel()
+    @ObservedObject var mainSwiperModel: MainViewModel
 //    // Helper function to conditionally apply .searchable modifier
 //    @ViewBuilder
 //    private func navBar() -> some View {
@@ -79,12 +80,13 @@ struct FeedView: View {
 ////            .background(navBar())
 ////        .tabViewStyle(.page(indexDisplayMode: .always))
 //    }
+//    var body: some View {
     var body: some View {
             NavigationStack {
                 ScrollView {
                     LazyVStack(spacing: 32,content: {
                         ForEach(feedViewModel.posts) { post in
-                            FeedCell(post: post)
+                            FeedCell(mainSwiperModel: mainSwiperModel, post: post)
                         }
                     })
                     .padding(.top, 8)
@@ -92,6 +94,10 @@ struct FeedView: View {
                 .refreshable {
                     Task { try await feedViewModel.featchPost() }
                 }
+                .onAppear(perform: {
+                    mainSwiperModel.leftView = nil
+                    mainSwiperModel.rightView = .discution
+                })
                 .navigationTitle("Feed")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -107,7 +113,7 @@ struct FeedView: View {
                         .imageScale(.large)
                         .onTapGesture {
                             withAnimation {
-                                offset = UIScreen.main.bounds.width * 1
+                                mainSwiperModel.activeView = .right
                             }
                         }
                     }
@@ -121,5 +127,5 @@ struct FeedView: View {
 }
 
 #Preview {
-    FeedView(offset: .constant(0))
+    FeedView(offset: .constant(0), mainSwiperModel: MainViewModel())
 }

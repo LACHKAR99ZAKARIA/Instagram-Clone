@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct UploadPostView: View {
+    @ObservedObject var mainSwiperModel: MainViewModel
     @State private var caption = ""
     @State private var imgPickerPresenter = false
     @StateObject var viewModel = UploadPostViewModel()
@@ -54,6 +55,8 @@ struct UploadPostView: View {
         }
         .onAppear{
             imgPickerPresenter.toggle()
+            mainSwiperModel.leftView = nil
+            mainSwiperModel.rightView = nil
         }
         .photosPicker(isPresented: $imgPickerPresenter, selection: $viewModel.selectedImg)
     }
@@ -66,5 +69,5 @@ struct UploadPostView: View {
 }
 
 #Preview {
-    UploadPostView(tabIndex: .constant(3))
+    UploadPostView(mainSwiperModel: MainViewModel(), tabIndex: .constant(3))
 }

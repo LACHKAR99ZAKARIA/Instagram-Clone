@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedCell: View {
+    @ObservedObject var mainSwiperModel: MainViewModel
     @Environment(\.colorScheme) var colorScheme
     let post: Post
     var body: some View {
@@ -15,7 +16,7 @@ struct FeedCell: View {
             HStack {
                 if let u = post.user {
                     NavigationLink {
-                        ProfileView(user: u)
+                        ProfileView(mainSwiperModel: mainSwiperModel, user: u)
                     } label: {
                         CircilerProfileImageView(user: u, size: .xSmale)
                         Text(u.username)
@@ -89,5 +90,5 @@ struct FeedCell: View {
 }
 
 #Preview {
-    FeedCell(post: Post.MOCK_POSTS[0])
+    FeedCell(mainSwiperModel: MainViewModel(), post: Post.MOCK_POSTS[0])
 }

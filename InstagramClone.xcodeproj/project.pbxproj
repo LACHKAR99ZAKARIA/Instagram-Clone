@@ -20,7 +20,6 @@
 		01558A392AC9B93F001EB542 /* DiscutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558A382AC9B93F001EB542 /* DiscutionsView.swift */; };
 		01558A3C2ACA2487001EB542 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 01558A3B2ACA2487001EB542 /* SwiftUIPager */; };
 		01558B082ACD8A27001EB542 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558B072ACD8A27001EB542 /* MainView.swift */; };
-		01558B0A2ACD8A53001EB542 /* ScrollableTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01558B092ACD8A53001EB542 /* ScrollableTabBar.swift */; };
 		0158EB522AC1E439004EB479 /* CenterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB512AC1E439004EB479 /* CenterTabView.swift */; };
 		0158EB542AC1E6E1004EB479 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB532AC1E6E1004EB479 /* ProfileView.swift */; };
 		0158EB562AC1EBF9004EB479 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EB552AC1EBF9004EB479 /* UserStatView.swift */; };
@@ -63,6 +62,9 @@
 		01AA554C2AC5B57300A37C34 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA554B2AC5B57300A37C34 /* ImageUploader.swift */; };
 		01AA554F2AC5B9B500A37C34 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 01AA554E2AC5B9B500A37C34 /* Kingfisher */; };
 		01AA55512AC5BA9E00A37C34 /* CircilerProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA55502AC5BA9E00A37C34 /* CircilerProfileImageView.swift */; };
+		01F7C4CD2ACDC38C00B0FB5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7C4CC2ACDC38C00B0FB5C /* MainViewModel.swift */; };
+		01F7C5452AD05EB400B0FB5C /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7C5442AD05EB400B0FB5C /* Consts.swift */; };
+		01F7C5472AD05F5200B0FB5C /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7C5462AD05F5200B0FB5C /* enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +96,6 @@
 		01558A342AC8315B001EB542 /* SwipeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeModifier.swift; sourceTree = "<group>"; };
 		01558A382AC9B93F001EB542 /* DiscutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscutionsView.swift; sourceTree = "<group>"; };
 		01558B072ACD8A27001EB542 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		01558B092ACD8A53001EB542 /* ScrollableTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabBar.swift; sourceTree = "<group>"; };
 		0158EB512AC1E439004EB479 /* CenterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTabView.swift; sourceTree = "<group>"; };
 		0158EB532AC1E6E1004EB479 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0158EB552AC1EBF9004EB479 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
@@ -136,6 +137,9 @@
 		01AA55482AC5AACC00A37C34 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		01AA554B2AC5B57300A37C34 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		01AA55502AC5BA9E00A37C34 /* CircilerProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircilerProfileImageView.swift; sourceTree = "<group>"; };
+		01F7C4CC2ACDC38C00B0FB5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		01F7C5442AD05EB400B0FB5C /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		01F7C5462AD05F5200B0FB5C /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +201,6 @@
 				01AA55502AC5BA9E00A37C34 /* CircilerProfileImageView.swift */,
 				01558A1E2AC616AE001EB542 /* PostImageRectagleView.swift */,
 				01558A342AC8315B001EB542 /* SwipeModifier.swift */,
-				01558B092ACD8A53001EB542 /* ScrollableTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,7 +232,8 @@
 		01558B062ACD8A16001EB542 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				01558B072ACD8A27001EB542 /* MainView.swift */,
+				01F7C4CB2ACDC38200B0FB5C /* ViewModel */,
+				01F7C4CA2ACDC37800B0FB5C /* View */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -478,6 +482,7 @@
 		015E96012ABF1CBC00679C25 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				01F7C5442AD05EB400B0FB5C /* Consts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -497,6 +502,23 @@
 			isa = PBXGroup;
 			children = (
 				01AA55482AC5AACC00A37C34 /* EditProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01F7C4CA2ACDC37800B0FB5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01558B072ACD8A27001EB542 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01F7C4CB2ACDC38200B0FB5C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01F7C4CC2ACDC38C00B0FB5C /* MainViewModel.swift */,
+				01F7C5462AD05F5200B0FB5C /* enums.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -655,6 +677,7 @@
 				0158EB542AC1E6E1004EB479 /* ProfileView.swift in Sources */,
 				015E95D82ABF1C6E00679C25 /* ContentView.swift in Sources */,
 				01558A302AC792BA001EB542 /* View.swift in Sources */,
+				01F7C5472AD05F5200B0FB5C /* enums.swift in Sources */,
 				0158EB5F2AC21125004EB479 /* LoginView.swift in Sources */,
 				01AA55492AC5AACC00A37C34 /* EditProfileViewModel.swift in Sources */,
 				01AA55512AC5BA9E00A37C34 /* CircilerProfileImageView.swift in Sources */,
@@ -676,7 +699,6 @@
 				01AA554C2AC5B57300A37C34 /* ImageUploader.swift in Sources */,
 				0158EB932AC32C06004EB479 /* RegistrationViewModel.swift in Sources */,
 				0158EB7D2AC2FA3C004EB479 /* UploadPostViewModel.swift in Sources */,
-				01558B0A2ACD8A53001EB542 /* ScrollableTabBar.swift in Sources */,
 				0158EB792AC2ECCE004EB479 /* ProfileHeaderView.swift in Sources */,
 				0158EB6B2AC21D4D004EB479 /* CompleteSignUpView.swift in Sources */,
 				0158EB702AC2CE2F004EB479 /* User.swift in Sources */,
@@ -689,7 +711,9 @@
 				0158EB592AC1F060004EB479 /* FeedCell.swift in Sources */,
 				01558A1F2AC616AE001EB542 /* PostImageRectagleView.swift in Sources */,
 				01558A332AC79786001EB542 /* SwipeManager.swift in Sources */,
+				01F7C5452AD05EB400B0FB5C /* Consts.swift in Sources */,
 				0158EB692AC21C61004EB479 /* CreatePasswordView.swift in Sources */,
+				01F7C4CD2ACDC38C00B0FB5C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

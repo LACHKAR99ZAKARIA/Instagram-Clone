@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
+    @ObservedObject var mainSwiperModel: MainViewModel
     let user: User
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
@@ -16,6 +17,10 @@ struct CurrentUserProfileView: View {
                     ProfileHeaderView(user: user)
                     
                     PostGridView(user: user)
+                }
+                .onAppear{
+                    mainSwiperModel.leftView = nil
+                    mainSwiperModel.rightView = nil
                 }
                 .navigationTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)
@@ -35,5 +40,5 @@ struct CurrentUserProfileView: View {
 }
 
 #Preview {
-    CurrentUserProfileView(user: User.MOCK_USERS[0])
+    CurrentUserProfileView(mainSwiperModel: MainViewModel(), user: User.MOCK_USERS[0])
 }

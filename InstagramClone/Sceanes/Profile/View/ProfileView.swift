@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var mainSwiperModel: MainViewModel
     let user: User
     var body: some View {
             ScrollView {
@@ -15,11 +16,15 @@ struct ProfileView: View {
                 
                 PostGridView(user: user)
             }
+            .onAppear{
+                mainSwiperModel.leftView = nil
+                mainSwiperModel.rightView = nil
+            }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    ProfileView(user: User.MOCK_USERS[0])
+    ProfileView(mainSwiperModel: MainViewModel(), user: User.MOCK_USERS[0])
 }
